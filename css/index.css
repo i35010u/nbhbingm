@@ -16,10 +16,6 @@ html, body {
     font-size: 1.5em;
     line-height: 1.5em;
 }
-.wb-header img {
-    width: 270px;
-    height: 129px;
-}
 .wb-search {
     text-align: center;
     margin-top: 60px;
