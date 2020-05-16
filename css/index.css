@@ -12,6 +12,15 @@ html, body {
     text-align: center;
     margin-top: 100px;
 }
+#generate {
+    display: block;
+    background: 0 0;
+    color: rgb(25, 123, 221);
+    border: 0;
+    cursor: pointer;
+    height:100px;
+    margin: 0 auto;
+}
 .wb-header span {
     font-size: 1.5em;
     line-height: 1.5em;
@@ -84,6 +93,14 @@ html, body {
     background: #317ef3;
     border-bottom: 1px solid #2868c8;
     box-shadow: 1px 1px 1px #ccc;
+}
+#result {
+    background: #f8f8f8;
+    padding: 1em;
+    margin: 2em auto;
+    max-width: 600px;
+    border-radius: 4px;
+    transition: opacity .5s ease;
 }
 .wb-footer {
     margin-top: 90px;
