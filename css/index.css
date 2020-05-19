@@ -7,6 +7,7 @@ html, body {
     margin: 0;
     padding: 0;
     min-width: 810px;
+    font: 200 1em 微软雅黑, sans-serif;
 }
 .wb-header {
     text-align: center;
@@ -103,7 +104,6 @@ html, body {
 }
 .wb-footer {
     margin-top: 90px;
-    border-top: solid 1px #dddddd;
     padding-top: 36px;
     text-align: center;
 }
