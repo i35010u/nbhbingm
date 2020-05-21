@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-        <meta content="你不会百度吗？" name="description"/>
-        <meta content="不会百度吗, 你不会百度吗，不会百度么" name="keywords"/>
+        <meta charset="utf-8">
+        <title>你不会百度吗?</title>
+        <meta name="description" content="你不会百度吗？">
+        <meta name="keywords" content="不会百度吗, 你不会百度吗，不会百度么">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link href="./css/index.css" rel="stylesheet">
         <link href="./img/favicon.ico" rel="icon" type="image/x-icon"/>
+        <!-- BEGIN:MDUI -->
         <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
         <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
-        <title>
-            你不会百度吗?
-        </title>
-        <link href="./css/index.css" rel="stylesheet">
-        </link>
+        <!-- END:MDUI -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- Matomo -->
         <script type="text/javascript">
         var _paq = window._paq || [];
@@ -27,22 +28,17 @@
         })();
         </script>
         <!-- End Matomo Code -->
+        <link href="./css/page.css" rel="stylesheet"></link>
     </head>
     <body>
-        <div class="wb-header" id="header">
-            <span>
-                <img id="logo" src="./img/nbhbdm.png"/>
-            </span>
-        </div>
+        <h1 class="nbhbdm-title">你不会百度吗</h1>
         <div class="wb-search" id="search">
-            <input autofocus="autofocus" id="search-input" type="text"/>
-            <button id="search-button" class="mdui-btn mdui-color-theme-accent mdui-ripple">
-                百度一下
-            </button>
+            <input autofocus="autofocus" id="search-input" placeholder="在这里输入关键字~" type="text"/>
+            <button id="search-button" class="mdui-btn mdui-color-theme-accent mdui-ripple">百度一下</button>
         </div>
         <div class="wb-tip" id="tip">
             <span id="tip1">
-                输入搜索关键字
+                {{ message }}
             </span>
         </div>
         <div class="mdui-panel" mdui-panel style=display:none; id="result">
@@ -51,8 +47,9 @@
                     <p></p>
                     <div class="mdui-typo">
                         <h3>链接</h3>
-                        <p>通用地址：<a id="bd-link" href=""><d id="bd-link"></d></a></p>
-                        <p>短链接：<a id="short-link" href=""><d id="short-link"></d></a></p>
+                        <p>通用链接：<d id="normallink">{{ message }}</d></p>
+                        <p>短链接：<d id="shortlink">{{ message }}</d></p>
+                        <button data-clipboard-target="#normallink" class="mdui-btn copy mdui-color-theme-accent mdui-ripple">复制通用链接</button><button data-clipboard-target="#shortlink" class="mdui-btn copy mdui-color-theme-accent mdui-ripple">复制短链接</button>
                     </div>
                 </div>
             </div>
@@ -61,27 +58,17 @@
         <button id=generate>停一停！我会百度，我要生成链接！</button>
         <div class="wb-footer" id="footer">
             <span>
-                原项目
-                <a href="https://github.com/wolfbolin/baidux">
-                    wolfbolin/baidux
-                </a>
+                <a href="https://zihangu.com">ZihanGu的博客</a>
                 |
-                <a href="https://github.com/TheZihanGu/nbhbdm">
-                    本项目Github
-                </a>
+                <a href="https://github.com/TheZihanGu/nbhbdm">本项目Github</a>
                 |
-                <a href="https://api.tzg6.com">
-                    基于TZG API
-                </a>
+                <a href="https://api.tzg6.com">基于TZG API</a>
             </span>
+            <br><br><br>
         </div>
-        <br><br>
         <img class="wb-mouse" id="fake-mouse" src="./img/mouse.png"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./js/page.js"></script>
     </body>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js">
-    </script>
-    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js">
-    </script>
-    <script src="./js/index.js">
-    </script>
 </html>

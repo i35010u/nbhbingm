@@ -1,26 +1,23 @@
 /**
  * TheZihanGu/nbhbdm
  * https://nbhbdm.cn
- * 原项目: WolfBolin/baidux
  */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-width: 810px;
-    font: 200 1em 微软雅黑, sans-serif;
+button, html, input {
+    font: 200 1em 微软雅黑,sans-serif;
+}
+.nbhbdm-title {
+    background: url(../img/nbhbdm.png) no-repeat;
+    width: 500px;
+    height: 114px;
+    font-size: 45px;
+    text-align: center;
+    margin: 3em auto 1em;
+    color: transparent;
+    position: relative;
 }
 .wb-header {
     text-align: center;
     margin-top: 100px;
-}
-#generate {
-    display: block;
-    background: 0 0;
-    color: rgb(25, 123, 221);
-    border: 0;
-    cursor: pointer;
-    height:100px;
-    margin: 0 auto;
 }
 .wb-header span {
     font-size: 1.5em;
@@ -119,4 +116,13 @@ html, body {
 .wb-click{
     background: #3075dc !important;
     box-shadow: inset 1px 1px 5px #2964bb !important;
+}
+#generate {
+    display: block;
+    background: 0 0;
+    color: rgb(25, 123, 221);
+    border: 0;
+    cursor: pointer;
+    height:100px;
+    margin: 0 auto;
 }

@@ -1,17 +1,37 @@
 /**
  * TheZihanGu/nbhbdm
  * https://nbhbdm.cn
- * 原项目: WolfBolin/baidux
  */
-// 剪切板功能模块
+// 引用并初始化tip内容
+var tip = new Vue({
+    el: '#tip',
+    data: {
+        message: '输入搜索关键字'
+    }
+})
+// 引用并初始化短链接内容
+var shortlink = new Vue({
+    el: '#shortlink',
+    data: {
+        message: '短链接等待生成'
+    }
+})
+// 引用并初始化通用链接内容
+var normallink = new Vue({
+    el: '#normallink',
+    data: {
+        message: '通用链接等待生成'
+    }
+})
+// 剪切板操作
 var clipboard = new ClipboardJS('.copy');
 clipboard.on('success', function(e) {
     console.log(e);
-    $("#tip1").text("已将链接复制到剪贴板");
+    tip.message = "已将链接复制到剪贴板";
 });
 clipboard.on('error', function(e) {
     console.log(e);
-    $("#tip1").text("不知道为啥复制失败了");
+    tip.message = "emm...似乎无法复制到剪贴板呢.";
 });
 // 通过正则表达式获取链接中的参数
 function getQuery(name) {
@@ -47,7 +67,7 @@ function gotoBeginStatus() {
     mouse_obj = $("#fake-mouse");
     mouse_obj.stop(true);
     mouse_obj.css("display", "none");
-    $("#tip1").text("输入搜索关键字");
+    tip.message = "输入搜索关键字";
     $("#link").css("display", "none");
 }
 // 用户点击输入框时终止所有动画
@@ -78,25 +98,23 @@ $("#generate").click(function() {
     gotoBeginStatus();
     // 根据输入框内容更新显示样式
     if (input_text.length !== 0) {
-        $("#tip1").text("蕴藏知识的链接已经生成");
+        tip.message = "蕴含知识的链接已经生成";
         $("#result").css("display", "block");
     }
     if (input_text.length == 0) {
-        $("#tip1").text("请正确输入搜索内容");
+        tip.message = "请正确输入搜索内容";
     }
     query_text = encodeURIComponent(input_text);
-    $("#bd-link").text(hostname + "?s=" + query_text);
-    $('#short-link').text("正在生成中")
-    document.getElementById("bd-link").href = hostname + "?s=" + query_text;
+    normallink.message = hostname + "?s=" + query_text;
+    shortlink.message = "正在生成中";
     var httpRequest = new XMLHttpRequest();
         httpRequest.open('GET', "https://api.tzg6.com/api/shortlink?token=nbhbdm&url=" + hostname + "?s=" + query_text, true);
         httpRequest.send();
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var json = httpRequest.responseText;
-                console.log(json);
-                $("#short-link").text(json)
-                document.getElementById("bd-link").href = json;
+                var shortlink_result = httpRequest.responseText;
+                console.log("短链接: " + shortlink_result);
+                shortlink.message = shortlink_result;
             }
         }
 });
