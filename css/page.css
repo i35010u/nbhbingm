@@ -6,7 +6,7 @@ button, html, input {
     font: 200 1em 微软雅黑,sans-serif;
 }
 .nbhbdm-title {
-    background: url(../img/nbhbdm.png) no-repeat;
+    background: url(../img/nbhbdm.svg) no-repeat;
     width: 500px;
     height: 114px;
     font-size: 45px;
@@ -100,13 +100,15 @@ button, html, input {
     transition: opacity .5s ease;
 }
 .wb-footer {
-    margin-top: 90px;
-    padding-top: 36px;
+    padding: 7em 0 4em;
+    font-size: 15px;
     text-align: center;
 }
 .wb-footer span, .wb-footer a {
+    display: inline-block;
+    margin: 0 1em;
     color: #999;
-    font: 12px arial;
+    text-decoration: none;
 }
 .wb-mouse {
     display: none;
