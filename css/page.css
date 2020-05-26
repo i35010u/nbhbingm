@@ -5,6 +5,12 @@
 button, html, input {
     font: 200 1em 微软雅黑,sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #222;
+        color: #eee;
+    }
+}
 .nbhbdm-title {
     background: url(../img/nbhbdm.svg) no-repeat;
     width: 500px;
