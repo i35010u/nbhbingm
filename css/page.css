@@ -21,6 +21,11 @@ button, html, input {
     color: transparent;
     position: relative;
 }
+.qrcode{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
 .wb-header {
     text-align: center;
     margin-top: 100px;

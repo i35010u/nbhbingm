@@ -33,6 +33,14 @@ clipboard.on('error', function(e) {
     console.log(e);
     tip.message = "emm...似乎无法复制到剪贴板呢.";
 });
+// 二维码生成
+$("#generate-qr-code-button").click(function() {
+    query_text = encodeURIComponent(input_text);
+    new QRCode(document.getElementById("qrcode"), hostname + "?s=" + query_text);
+    mdui.snackbar({
+        message: '这是一个测试功能,如果出现问题,请前往 GitHub Issues 进行反馈!'
+      });
+});
 // 通过正则表达式获取链接中的参数
 function getQuery(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
