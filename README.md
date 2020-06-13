@@ -18,5 +18,5 @@
 如果您位于欧盟成员国，我们也将按照 GDPR 相关条款和欧盟成员国的其他数据保护或数据隐私法对您的隐私数据进行处理。
 ```
 
-# 酷Q 插件
+## 酷Q 插件
 我们开发了一款基于 JCQ 的 酷Q 机器人插件，你可以快捷的教别人如何百度。你可以在 [TheZihanGu/nbhbdm-jcq](https://github.com/TheZihanGu/nbhbdm-jcq) 进行下载。   
