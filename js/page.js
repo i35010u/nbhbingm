@@ -112,6 +112,11 @@ $("#generate").click(function() {
     if (input_text.length == 0) {
         tip.message = "请正确输入搜索内容";
     }
+    if (input_text.match("http")){
+        mdui.snackbar({
+            message: 'TIP: 请不要利用本站进行套娃跳转其他网页!'
+        });
+    }
     query_text = encodeURIComponent(input_text);
     normallink.message = hostname + "?s=" + query_text;
     shortlink.message = "正在生成中";
