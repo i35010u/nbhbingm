@@ -1,6 +1,6 @@
 /**
- * TheZihanGu/nbhbdm
- * https://nbhbdm.cn
+ * i35010u/nbhbingm
+ * https://nbhbingm.tk
  */
 // 引用并初始化tip内容
 var tip = new Vue({
@@ -82,15 +82,15 @@ function gotoBeginStatus() {
 $("#search-input").click(function() {
     gotoBeginStatus(); // 重置页面状态
 });
-// “百度一下”按钮按下事件
+// “Bing一下”按钮按下事件
 $("#search-button").mousedown(function() {
     $("#search-button").addClass("wb-click"); // 更新按钮点击样式
 });
-// “百度一下”按钮释放事件
+// “Bing一下”按钮释放事件
 $("#search-button").mouseup(function() {
     $("#search-button").removeClass("wb-click"); // 更新按钮点击样式
 });
-// “百度一下”按钮的响应事件
+// “Bing一下”按钮的响应事件
 $("#search-button").click(function() {
     input_text = $("#search-input").val();
     input_text = input_text.trim();
@@ -168,7 +168,7 @@ $(document).ready(function() {
             "left": input_offest.left + 10,
         }, 2000, "swing", function() {
             // 计算每个字符的输入时间
-            $("#tip1").text("输入要搜索的内容后点击\"百度一下\"按钮");
+            $("#tip1").text("输入要搜索的内容后点击\"Bing一下\"按钮");
             time = 1800 / query.length;
             addSearchText(query, time); // 逐个写入文本内容
         });
@@ -179,9 +179,9 @@ $(document).ready(function() {
         }, 2000, "swing", function() {
             $("#search-button").addClass("wb-click");
             $("#tip1").text("是不是很简单呢");
-            navigate = "https://www.baidu.com/s?wd=";
+            navigate = "https://cn.bing.com/search?q=";
             navigate += encodeURIComponent(query);
-            console.log("百度一下")
+            console.log("Bing一下")
             console.log(navigate);
             setTimeout(function() {
                 window.location.href = navigate;
