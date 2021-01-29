@@ -13,10 +13,11 @@
         <script src="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
         <!-- END:MDUI -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+        
         <link href="./css/page.css" rel="stylesheet"></link>
     </head>
     <body>
+        <script type= "text/javascript"  src= "https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js" ></script>
         <h1 class="nbhbingm-title">你不会Microsoft Bing吗？</h1>
         <div class="wb-search" id="search">
             <input autofocus="autofocus" id="search-input" placeholder="在这里输入关键字~" type="text"/>
@@ -34,8 +35,7 @@
                     <div class="mdui-typo">
                         <h3>链接</h3>
                         <p>通用链接：<d id="normallink">{{ message }}</d></p>
-                        <p>短链接：<d id="shortlink">{{ message }}</d></p>
-                        <button data-clipboard-target="#normallink" class="mdui-btn copy mdui-color-theme-accent mdui-ripple">复制通用链接</button><button data-clipboard-target="#shortlink" class="mdui-btn copy mdui-color-theme-accent mdui-ripple">复制短链接</button>
+                        <button data-clipboard-target="#normallink" class="mdui-btn copy mdui-color-theme-accent mdui-ripple">复制通用链接</button> 
                     </div>
                 </div>
             </div>
